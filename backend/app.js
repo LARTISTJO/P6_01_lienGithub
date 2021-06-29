@@ -9,13 +9,13 @@ const userRoutes = require('./routes/user');
 
 require("dotenv").config();
 
-mongoose.connect(process.env.DB_User,
+mongoose.connect('mongodb+srv://usersAll:Lom25bre@cluster0.cl3mj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-  const app = express();
+const app = express();
   
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
